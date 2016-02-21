@@ -48,3 +48,33 @@ public class Solution {
     return head;
   }
 }
+
+// javascript
+/**
+ * @param {ListNode} head
+ * @param {number} n
+ * @return {ListNode}
+ */
+var removeNthFromEnd = function(head, n) {
+  if(n == 0)
+    return head;
+    
+  var p1 = head;
+  var p2 = head;
+  
+  while(n--){
+    p2 = p2.next;
+  }
+  
+  if(!p2)
+    return p1.next;
+    
+  while(p2.next){
+    p1 = p1.next;
+    p2 = p2.next;
+  }
+  
+  p1.next = p1.next.next;
+  
+  return head;
+};

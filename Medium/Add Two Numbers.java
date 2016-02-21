@@ -55,3 +55,36 @@ public class Solution {
     return ln;
   }
 }
+
+
+// javascript
+/**
+ * @param {ListNode} l1
+ * @param {ListNode} l2
+ * @return {ListNode}
+ */
+var addTwoNumbers = function(l1, l2) {
+  var l = l1;
+  var t;
+  var add = 0;
+  
+  while(l1 || l2){
+    l1.val = (l1 ? l1.val : 0) + (l2 ? l2.val : 0) + add;
+    add = parseInt(l1.val / 10);
+    l1.val %= 10;
+    if(!l1.next){
+      l1.next = l2 ? l2.next : null;
+      l2 = null;
+      t = l1;
+    }
+    l1 = l1.next;
+    l2 = l2 ? l2.next : null;
+  }
+
+  if(add == 1){
+    var n = new ListNode(1);
+    t.next = n;
+  }
+  
+  return l;
+};

@@ -5,7 +5,7 @@ Given a binary tree, return the bottom-up level order traversal of its nodes' va
 
 For example:
 Given binary tree {3,9,20,#,#,15,7},
-  3
+    3
    / \
   9  20
   /  \

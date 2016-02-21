@@ -25,12 +25,30 @@ public class Solution {
   public ListNode deleteDuplicates(ListNode head) {
     ListNode p = head;
     while(p!=null){
-        if(p.next!=null && p.val == p.next.val){
-          p.next = p.next.next;
-        }else{
-          p = p.next;
-        }
+      if(p.next!=null && p.val == p.next.val){
+        p.next = p.next.next;
+      }else{
+        p = p.next;
+      }
     }
     return head;
   }
 }
+
+/**
+ * @param {ListNode} head
+ * @param {number} val
+ * @return {ListNode}
+ */
+var removeElements = function(head, val) {
+  var p = {};
+  p['next'] = head;
+  head = p;
+  while(p.next){
+    if(p.next.val == val)
+      p.next = p.next.next;
+    else
+      p = p.next;
+  }
+  return head.next;
+};
