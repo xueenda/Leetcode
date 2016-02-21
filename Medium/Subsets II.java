@@ -1,5 +1,6 @@
 /*
-Subsets II Total Accepted: 42477 Total Submissions: 153212 My Submissions Question Solution 
+Subsets II
+
 Given a collection of integers that might contain duplicates, nums, return all possible subsets.
 
 Note:
@@ -22,6 +23,7 @@ if(!result.contains(list)){
     result.add(new ArrayList(list));
 }
 */
+
 
 public class Solution {
     public List<List<Integer>> subsetsWithDup(int[] nums) {

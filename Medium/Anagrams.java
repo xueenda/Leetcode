@@ -1,5 +1,6 @@
 /*
-Anagrams Total Accepted: 41951 Total Submissions: 171669 My Submissions Question Solution 
+Anagrams
+
 Given an array of strings, return all groups of strings that are anagrams.
 
 Note: All inputs will be in lower-case.
@@ -10,6 +11,7 @@ S = ["abc", "bca", "bac", "bbb", "bbca", "abcb"]
 ["abc", "bca", "bac", "bbca", "abcb"]
 只有"bbb"没有相同字母组成的单词。
 */
+
 
 public class Solution {
     public List<String> anagrams(String[] strs) {

@@ -1,5 +1,6 @@
 /*
 Single Number
+
 Given an array of integers, every element appears twice except for one. Find that single one.
 
 Note:
@@ -8,6 +9,7 @@ Your algorithm should have a linear runtime complexity. Could you implement it w
 分析：
 按位异或  相同的两个数按位异或 结果为0
 */
+
 
 public class Solution {
     public int singleNumber(int[] nums) {

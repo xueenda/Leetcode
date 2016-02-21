@@ -1,5 +1,6 @@
 /*
-Surrounded Regions Total Accepted: 32781 Total Submissions: 222954 My Submissions Question Solution 
+Surrounded Regions
+
 Given a 2D board containing 'X' and 'O', capture all regions surrounded by 'X'.
 
 A region is captured by flipping all 'O's into 'X's in that surrounded region.
@@ -20,6 +21,7 @@ Analysis
 
 This problem is similar to Number of Islands. In this problem, only the cells on the boarders can not be surrounded. So we can first merge those O's on the boarders like in Number of Islands and replace O's with '#', and then scan the board and replace all O's left (if any).
 */
+
 
 public class Solution {
     static final int[] directionX = {+1, -1, 0, 0};

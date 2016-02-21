@@ -1,5 +1,6 @@
 /*
-Binary Tree Level Order Traversal Total Accepted: 58414 Total Submissions: 199657 My Submissions Question Solution 
+Binary Tree Level Order Traversal
+
 Given a binary tree, return the level order traversal of its nodes' values. (ie, from left to right, level by level).
 
 For example:
@@ -16,6 +17,7 @@ return its level order traversal as:
   [15,7]
 ]
 */
+
 
 /**
  * Definition for a binary tree node.

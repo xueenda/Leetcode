@@ -1,5 +1,6 @@
 /*
 Multiply Strings
+
 Given two numbers represented as strings, return multiplication of the numbers as a string.
 
 Note: The numbers can be arbitrarily large and are non-negative.
@@ -8,6 +9,8 @@ Note: The numbers can be arbitrarily large and are non-negative.
 /*
 最重要的要声明一个 num1.length()-1 + num2.length()-1 空间的int数组
 */
+
+
 public class Solution {
     public String multiply(String num1, String num2) {
         String n1 = new StringBuilder(num1).reverse().toString();

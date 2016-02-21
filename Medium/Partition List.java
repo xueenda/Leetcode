@@ -1,5 +1,6 @@
 /*
-Partition List Total Accepted: 42300 Total Submissions: 154311 My Submissions Question Solution 
+Partition List
+
 Given a linked list and a value x, partition it such that all nodes less than x come before nodes greater than or equal to x.
 
 You should preserve the original relative order of the nodes in each of the two partitions.
@@ -12,6 +13,8 @@ return 1->2->2->4->3->5.
 /*
 生成连个链表 left right， 小于target的放在left链表里，其他的放在right链表里， 最后把两个链表再连起来。
 */
+
+
 /**
  * Definition for singly-linked list.
  * public class ListNode {

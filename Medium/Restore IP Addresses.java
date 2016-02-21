@@ -1,5 +1,6 @@
 /*
-Restore IP Addresses Total Accepted: 36345 Total Submissions: 172448 My Submissions Question Solution 
+Restore IP Addresses
+
 Given a string containing only digits, restore it by returning all possible valid IP address combinations.
 
 For example:
@@ -11,6 +12,7 @@ return ["255.255.11.135", "255.255.111.35"]. (Order does not matter)
 /*
 注意 isvalid 的应用，来验证是否为有效的substring
 */
+
 
 public class Solution {
     public List<String> restoreIpAddresses(String s) {

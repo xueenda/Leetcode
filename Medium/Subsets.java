@@ -1,5 +1,6 @@
 /*
-Subsets Total Accepted: 55931 Total Submissions: 198554 My Submissions Question Solution 
+Subsets
+
 Given a set of distinct integers, nums, return all possible subsets.
 
 Note:
@@ -19,6 +20,7 @@ If nums = [1,2,3], a solution is:
   []
 ]
 */
+
 
 public class Solution {
     public List<List<Integer>> subsets(int[] nums) {

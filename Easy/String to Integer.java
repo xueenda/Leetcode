@@ -1,5 +1,6 @@
 /*
 String to Integer (atoi)
+
 Implement atoi to convert a string to an integer.
 
 Hint: Carefully consider all possible input cases. If you want a challenge, please do not see below and ask yourself what are the possible input cases.
@@ -10,6 +11,8 @@ Notes: It is intended for this problem to be specified vaguely (ie, no given inp
 /*
 要考虑+，-，空格
 */
+
+
 public class Solution {
     public int myAtoi(String str) {
         if(str == null)

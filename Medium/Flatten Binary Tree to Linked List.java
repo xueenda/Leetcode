@@ -25,6 +25,8 @@ The flattened tree should look like:
 分析：
 借助 lastnode 保存上一个根节点
 */
+
+
 /**
  * Definition for a binary tree node.
  * public class TreeNode {

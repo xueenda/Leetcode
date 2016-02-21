@@ -1,5 +1,6 @@
 /*
 Unique Paths II
+
 Follow up for "Unique Paths":
 
 Now consider if some obstacles are added to the grids. How many unique paths would there be?
@@ -18,6 +19,7 @@ The total number of unique paths is 2.
 
 Note: m and n will be at most 100.
 */
+
 
 public class Solution {
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {

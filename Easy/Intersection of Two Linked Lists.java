@@ -1,5 +1,6 @@
 /*
-Intersection of Two Linked Lists Total Accepted: 37680 Total Submissions: 131261 My Submissions Question Solution 
+Intersection of Two Linked Lists
+
 Write a program to find the node at which the intersection of two singly linked lists begins.
 
 
@@ -20,6 +21,7 @@ The linked lists must retain their original structure after the function returns
 You may assume there are no cycles anywhere in the entire linked structure.
 Your code should preferably run in O(n) time and use only O(1) memory.
 */
+
 
 /**
  * Definition for singly-linked list.

@@ -1,5 +1,6 @@
 /*
-Clone Graph Total Accepted: 42227 Total Submissions: 175436 My Submissions Question Solution 
+Clone Graph
+
 Clone an undirected graph. Each node in the graph contains a label and a list of its neighbors.
 
 
@@ -25,6 +26,7 @@ Visually, the graph looks like the following:
 
 http://www.programcreek.com/2012/12/leetcode-clone-graph-java/
 */
+
 
 /**
  * Definition for undirected graph.

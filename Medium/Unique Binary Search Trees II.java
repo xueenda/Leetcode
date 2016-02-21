@@ -1,5 +1,7 @@
 /*
-Unique Binary Search Trees II Total Accepted: 34823 Total Submissions: 124149 My Submissions Question Solution 
+
+Unique Binary Search Trees II
+
 Given n, generate all structurally unique BST's (binary search trees) that store values 1...n.
 
 For example,
@@ -12,6 +14,7 @@ Given n = 3, your program should return all 5 unique BST's shown below.
    2     1         2                 3
 confused what "{1,#,2,3}" means? 
 */
+
 
 /**
  * Definition for a binary tree node.

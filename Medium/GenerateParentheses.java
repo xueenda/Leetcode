@@ -1,11 +1,13 @@
 /*
 Generate Parentheses
+
 Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
 
 For example, given n = 3, a solution set is:
 
 "((()))", "(()())", "(())()", "()(())", "()()()"
 */
+
 
 public class Solution {
     public List<String> generateParenthesis(int n) {
@@ -19,8 +21,8 @@ public class Solution {
     
     private void getPair(String s,List<String> list, int left, int right){
         if(left > right || left < 0 || right < 0) {
-			return; 	
-		}
+      return;   
+    }
         if(left==0&&right==0){
             list.add(s);
             return;

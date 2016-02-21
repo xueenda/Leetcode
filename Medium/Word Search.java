@@ -1,5 +1,6 @@
 /*
-Word Search Total Accepted: 42712 Total Submissions: 209357 My Submissions Question Solution 
+Word Search
+
 Given a 2D board and a word, find if the word exists in the grid.
 
 The word can be constructed from letters of sequentially adjacent cell, where "adjacent" cells are those horizontally or vertically neighboring. The same letter cell may not be used more than once.
@@ -16,6 +17,7 @@ word = "ABCCED", -> returns true,
 word = "SEE", -> returns true,
 word = "ABCB", -> returns false.
 */
+
 
 public class Solution {
     public boolean exist(char[][] board, String word) {
@@ -43,7 +45,7 @@ public class Solution {
         if (i < 0 || i>= board.length || 
      j < 0 || j >= board[0].length || board[i][j] != word.charAt(start)){
             return false;
-	 }
+   }
         
         board[i][j] = '#'; // should remember to mark it
         boolean rst = find(board, i-1, j, word, start+1) || find(board, i, j-1, word, start+1) || find(board, i+1, j, word, start+1) || find(board, i, j+1, word, start+1);

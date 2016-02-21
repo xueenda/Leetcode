@@ -1,5 +1,6 @@
 /*
-Binary Tree Zigzag Level Order Traversal Total Accepted: 37901 Total Submissions: 143575 My Submissions Question Solution 
+Binary Tree Zigzag Level Order Traversal
+
 Given a binary tree, return the zigzag level order traversal of its nodes' values. (ie, from left to right, then right to left for the next level and alternate between).
 
 For example:
@@ -16,6 +17,7 @@ return its zigzag level order traversal as:
   [15,7]
 ]
 */
+
 
 /**
  * Definition for a binary tree node.

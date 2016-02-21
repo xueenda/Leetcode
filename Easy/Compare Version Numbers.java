@@ -1,5 +1,6 @@
 /*
-Compare Version Numbers Total Accepted: 27878 Total Submissions: 182728 My Submissions Question Solution 
+Compare Version Numbers
+
 Compare two version numbers version1 and version2.
 If version1 > version2 return 1, if version1 < version2 return -1, otherwise return 0.
 
@@ -11,6 +12,7 @@ Here is an example of version numbers ordering:
 
 0.1 < 1.1 < 1.2 < 13.37
 */
+
 
 public class Solution {
     public int compareVersion(String version1, String version2) {

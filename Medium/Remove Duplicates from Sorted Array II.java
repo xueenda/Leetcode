@@ -1,5 +1,6 @@
 /*
-Remove Duplicates from Sorted Array II Total Accepted: 46341 Total Submissions: 152152 My Submissions Question Solution 
+Remove Duplicates from Sorted Array II
+
 Follow up for "Remove Duplicates":
 What if duplicates are allowed at most twice?
 
@@ -12,6 +13,8 @@ Your function should return length = 5, with the first five elements of nums bei
 /*
     Set two pointers, the length between j and i is less than 2
 */
+
+
 public class Solution {
     public int removeDuplicates(int[] nums) {
         if(nums == null || nums.length == 0)

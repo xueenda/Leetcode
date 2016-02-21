@@ -1,5 +1,6 @@
 /*
 Search for a Range
+
 Given a sorted array of integers, find the starting and ending position of a given target value.
 
 Your algorithm's runtime complexity must be in the order of O(log n).
@@ -15,6 +16,7 @@ return [3, 4].
 O(log n) 就是binary search
 找左边的lower bound 再找右边的upper bound 
 */
+
 
 public class Solution {
     public int[] searchRange(int[] nums, int target) {

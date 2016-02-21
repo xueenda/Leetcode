@@ -1,5 +1,6 @@
 /*
 Binary Tree Right Side View
+
 Given a binary tree, imagine yourself standing on the right side of it, return the values of the nodes you can see ordered from top to bottom.
 
 For example:
@@ -10,7 +11,11 @@ Given the following binary tree,
  \     \
   5     4       <---
 You should return [1, 3, 4].
+
+分析：
+借助 HashMap 每次都会重置key value pair 并保存最后存入的值
 */
+
 
 /**
  * Definition for a binary tree node.

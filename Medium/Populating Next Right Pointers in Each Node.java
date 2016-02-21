@@ -1,4 +1,6 @@
 /*
+Populating Next Right Pointers in Each Node
+
 Given a binary tree
 
     struct TreeLinkNode {
@@ -31,6 +33,7 @@ After calling your function, the tree should look like:
 分析：
 注意 next 的应用
 */
+
 
 /**
  * Definition for binary tree with next pointer.

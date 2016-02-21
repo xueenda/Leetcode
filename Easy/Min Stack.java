@@ -10,6 +10,7 @@ getMin() -- Retrieve the minimum element in the stack.
 建立两个stack
 */
 
+
 class MinStack {
     private Stack<Integer> stack = new Stack<Integer>(); 
     private Stack<Integer> minStack = new Stack<Integer>(); 

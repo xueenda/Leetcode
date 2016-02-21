@@ -1,5 +1,6 @@
 /*
-Combinations Total Accepted: 47286 Total Submissions: 153041 My Submissions Question Solution 
+Combinations
+
 Given two integers n and k, return all possible combinations of k numbers out of 1 ... n.
 
 For example,
@@ -14,6 +15,7 @@ If n = 4 and k = 2, a solution is:
   [1,4],
 ]
 */
+
 
 public class Solution {
     public List<List<Integer>> combine(int n, int k) {

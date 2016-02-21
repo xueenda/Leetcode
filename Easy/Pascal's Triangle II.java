@@ -9,6 +9,7 @@ Note:
 Could you optimize your algorithm to use only O(k) extra space?
 */
 
+
 public class Solution {
     public List<Integer> getRow(int rowIndex) {
         List<Integer> list = new ArrayList();
