@@ -15,36 +15,36 @@ Some examples:
 
 
 public class Solution {
-    public int evalRPN(String[] tokens) {
-        if(tokens == null || tokens.length==0)
-            return 0;
-            
-        Stack<Integer> stack = new Stack<Integer>();
-        
-        for(int i=0;i<tokens.length;i++){
-            if("+-*/".contains(tokens[i])){
-                int b = stack.pop();
-                int a = stack.pop();
-                switch(tokens[i]){
-                    case "+":
-                        a +=b;
-                        break;
-                    case "-":
-                        a -=b;
-                        break;
-                    case "*":
-                        a *=b;
-                        break;
-                    case "/":
-                        a /=b;
-                        break;
-                }
-                stack.push(a);
-            }else{
-                stack.push(Integer.parseInt(tokens[i]));
-            }
+  public int evalRPN(String[] tokens) {
+    if(tokens == null || tokens.length==0)
+      return 0;
+      
+    Stack<Integer> stack = new Stack<Integer>();
+    
+    for(int i=0;i<tokens.length;i++){
+      if("+-*/".contains(tokens[i])){
+        int b = stack.pop();
+        int a = stack.pop();
+        switch(tokens[i]){
+          case "+":
+            a +=b;
+            break;
+          case "-":
+            a -=b;
+            break;
+          case "*":
+            a *=b;
+            break;
+          case "/":
+            a /=b;
+            break;
         }
-        
-        return stack.pop();
+        stack.push(a);
+      }else{
+        stack.push(Integer.parseInt(tokens[i]));
+      }
     }
+    
+    return stack.pop();
+  }
 }

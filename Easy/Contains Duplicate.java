@@ -9,13 +9,13 @@ Given an array of integers, find if the array contains any duplicates. Your func
 
 
 public class Solution {
-    public boolean containsDuplicate(int[] nums) {
-        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
-        for(int x: nums){
-            if(map.containsKey(x))
-                return true;
-            map.put(x,1);
-        }
-        return false;
+  public boolean containsDuplicate(int[] nums) {
+    HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+    for(int x: nums){
+      if(map.containsKey(x))
+        return true;
+      map.put(x,1);
     }
+    return false;
+  }
 }

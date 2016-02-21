@@ -14,34 +14,34 @@ S = ["abc", "bca", "bac", "bbb", "bbca", "abcb"]
 
 
 public class Solution {
-    public List<String> anagrams(String[] strs) {
-        List<String> list = new ArrayList<String>();
-        if(strs==null || strs.length==1)
-            return list;
-            
-        HashMap<String,ArrayList<Integer>> map = new HashMap<String,ArrayList<Integer>>();
-        
-        for(int i=0; i<strs.length;i++){
-            char[] arr = strs[i].toCharArray();
-            Arrays.sort(arr);
-            String s = String.valueOf(arr);
-            if(map.get(s) == null){
-                ArrayList<Integer> l = new ArrayList<Integer>();
-                l.add(i);
-                map.put(s,l);
-            }else{
-                map.get(s).add(i);
-            }
-        }
-        
-        for(ArrayList<Integer> l: map.values()){
-        if(l.size() > 1){
-            for(Integer i: l){
-                list.add(strs[i]);
-            }
-        }
+  public List<String> anagrams(String[] strs) {
+    List<String> list = new ArrayList<String>();
+    if(strs==null || strs.length==1)
+      return list;
+      
+    HashMap<String,ArrayList<Integer>> map = new HashMap<String,ArrayList<Integer>>();
+    
+    for(int i=0; i<strs.length;i++){
+      char[] arr = strs[i].toCharArray();
+      Arrays.sort(arr);
+      String s = String.valueOf(arr);
+      if(map.get(s) == null){
+        ArrayList<Integer> l = new ArrayList<Integer>();
+        l.add(i);
+        map.put(s,l);
+      }else{
+        map.get(s).add(i);
+      }
     }
+    
+    for(ArrayList<Integer> l: map.values()){
+    if(l.size() > 1){
+      for(Integer i: l){
+        list.add(strs[i]);
+      }
+    }
+  }
  
-    return list;
-    }
+  return list;
+  }
 }

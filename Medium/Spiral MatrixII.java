@@ -16,30 +16,30 @@ You should return the following matrix:
 
 
 public class Solution {
-    public int[][] generateMatrix(int n) {
-        if(n<0)
-            return null;
+  public int[][] generateMatrix(int n) {
+    if(n<0)
+      return null;
+    
+    int[][] matrix = new int[n][n];
+    int count=0;
+    int num = 1;
+    
+    while(count*2 < n){
+      for(int i = count;i<n-count;i++)
+        matrix[count][i] = num++;
+      for(int i = count+1; i<n-count;i++)
+        matrix[i][n-count-1] = num++;
+      
+      if(n - 2 * count == 1)  // if only one row /col remains
+        break;
         
-        int[][] matrix = new int[n][n];
-        int count=0;
-        int num = 1;
-        
-        while(count*2 < n){
-            for(int i = count;i<n-count;i++)
-                matrix[count][i] = num++;
-            for(int i = count+1; i<n-count;i++)
-                matrix[i][n-count-1] = num++;
-            
-            if(n - 2 * count == 1)  // if only one row /col remains
-                break;
-                
-            for(int i = n-count-2; i>=count;i--)
-                matrix[n-count-1][i] = num++;
-            for(int i = n-count-2; i>=count+1;i--)
-                matrix[i][count] = num++; 
-            count++;
-        }
-        
-        return matrix;
+      for(int i = n-count-2; i>=count;i--)
+        matrix[n-count-1][i] = num++;
+      for(int i = n-count-2; i>=count+1;i--)
+        matrix[i][count] = num++; 
+      count++;
     }
+    
+    return matrix;
+  }
 }

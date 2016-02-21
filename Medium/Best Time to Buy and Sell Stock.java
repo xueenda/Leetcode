@@ -8,17 +8,17 @@ If you were only permitted to complete at most one transaction (ie, buy one and 
 
 
 public class Solution {
-    public int maxProfit(int[] prices) {
-        if(prices == null)
-            return 0;
-        
-        int min = Integer.MAX_VALUE; 
-        int profit = 0;
-        
-        for(int i: prices){
-            min = (i<min) ? i:min;
-            profit = (i-min) > profit? i-min: profit;
-        }
-        return profit;
+  public int maxProfit(int[] prices) {
+    if(prices == null)
+      return 0;
+    
+    int min = Integer.MAX_VALUE; 
+    int profit = 0;
+    
+    for(int i: prices){
+      min = (i<min) ? i:min;
+      profit = (i-min) > profit? i-min: profit;
     }
+    return profit;
+  }
 }

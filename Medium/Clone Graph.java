@@ -17,12 +17,12 @@ Second node is labeled as 1. Connect node 1 to node 2.
 Third node is labeled as 2. Connect node 2 to node 2 (itself), thus forming a self-cycle.
 Visually, the graph looks like the following:
 
-       1
-      / \
-     /   \
-    0 --- 2
-         / \
-         \_/
+     1
+    / \
+   /   \
+  0 --- 2
+     / \
+     \_/
 
 http://www.programcreek.com/2012/12/leetcode-clone-graph-java/
 */
@@ -31,39 +31,39 @@ http://www.programcreek.com/2012/12/leetcode-clone-graph-java/
 /**
  * Definition for undirected graph.
  * class UndirectedGraphNode {
- *     int label;
- *     List<UndirectedGraphNode> neighbors;
- *     UndirectedGraphNode(int x) { label = x; neighbors = new ArrayList<UndirectedGraphNode>(); }
+ *   int label;
+ *   List<UndirectedGraphNode> neighbors;
+ *   UndirectedGraphNode(int x) { label = x; neighbors = new ArrayList<UndirectedGraphNode>(); }
  * };
  */
 public class Solution {
-    public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
-        if(node == null)
-            return null;
-            
-        LinkedList<UndirectedGraphNode> queue = new LinkedList<UndirectedGraphNode>();
-        HashMap<UndirectedGraphNode, UndirectedGraphNode> map = 
-                                   new HashMap<UndirectedGraphNode,UndirectedGraphNode>();
+  public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
+    if(node == null)
+      return null;
+      
+    LinkedList<UndirectedGraphNode> queue = new LinkedList<UndirectedGraphNode>();
+    HashMap<UndirectedGraphNode, UndirectedGraphNode> map = 
+                   new HashMap<UndirectedGraphNode,UndirectedGraphNode>();
  
-        UndirectedGraphNode newHead = new UndirectedGraphNode(node.label);
-        queue.add(node);
-        map.put(node, newHead);
-        
-        while(!queue.isEmpty()){
-            UndirectedGraphNode current = queue.remove();
-            List<UndirectedGraphNode> curNeighbors = current.neighbors;
-            
-            for(UndirectedGraphNode neighbor: curNeighbors){
-                if(!map.containsKey(neighbor)){
-                    UndirectedGraphNode copy = new UndirectedGraphNode(neighbor.label);
-                    map.put(neighbor,copy);
-                    map.get(current).neighbors.add(copy);
-                    queue.add(neighbor);
-                }else{
-                    map.get(current).neighbors.add(map.get(neighbor));
-                }
-            }
+    UndirectedGraphNode newHead = new UndirectedGraphNode(node.label);
+    queue.add(node);
+    map.put(node, newHead);
+    
+    while(!queue.isEmpty()){
+      UndirectedGraphNode current = queue.remove();
+      List<UndirectedGraphNode> curNeighbors = current.neighbors;
+      
+      for(UndirectedGraphNode neighbor: curNeighbors){
+        if(!map.containsKey(neighbor)){
+          UndirectedGraphNode copy = new UndirectedGraphNode(neighbor.label);
+          map.put(neighbor,copy);
+          map.get(current).neighbors.add(copy);
+          queue.add(neighbor);
+        }else{
+          map.get(current).neighbors.add(map.get(neighbor));
         }
-        return newHead;
+      }
     }
+    return newHead;
+  }
 }

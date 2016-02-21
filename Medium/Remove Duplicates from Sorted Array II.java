@@ -11,24 +11,24 @@ Your function should return length = 5, with the first five elements of nums bei
 */
 
 /*
-    Set two pointers, the length between j and i is less than 2
+  Set two pointers, the length between j and i is less than 2
 */
 
 
 public class Solution {
-    public int removeDuplicates(int[] nums) {
-        if(nums == null || nums.length == 0)
-            return 0;
-        
-        int count = 0;
-        int j = 0;
-        for(int i = 0;i<nums.length && j<nums.length;i++){
-            if(nums[i]!=nums[j]){
-                j=i;
-            }
-            if(i-j < 2)
-                nums[count++] = nums[j];
-        }
-        return count;
+  public int removeDuplicates(int[] nums) {
+    if(nums == null || nums.length == 0)
+      return 0;
+    
+    int count = 0;
+    int j = 0;
+    for(int i = 0;i<nums.length && j<nums.length;i++){
+      if(nums[i]!=nums[j]){
+        j=i;
+      }
+      if(i-j < 2)
+        nums[count++] = nums[j];
     }
+    return count;
+  }
 }

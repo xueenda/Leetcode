@@ -23,25 +23,25 @@ If nums = [1,2,3], a solution is:
 
 
 public class Solution {
-    public List<List<Integer>> subsets(int[] nums) {
-        List result = new ArrayList();
-        if(nums == null || nums.length == 0) {
-            return result;
-        }
-        ArrayList<Integer> list = new ArrayList<Integer>();
-        Arrays.sort(nums);
-        helper(result, list, nums,0);
-        return result;
+  public List<List<Integer>> subsets(int[] nums) {
+    List result = new ArrayList();
+    if(nums == null || nums.length == 0) {
+      return result;
     }
+    ArrayList<Integer> list = new ArrayList<Integer>();
+    Arrays.sort(nums);
+    helper(result, list, nums,0);
+    return result;
+  }
+  
+  private void helper(List result, ArrayList<Integer> list, int[] nums, int start){
     
-    private void helper(List result, ArrayList<Integer> list, int[] nums, int start){
-        
-        result.add(new ArrayList(list));
-        
-        for(int i=start; i<nums.length;i++){
-            list.add(nums[i]);
-            helper(result, list, nums, i+1);
-            list.remove(list.size()-1);
-        }
+    result.add(new ArrayList(list));
+    
+    for(int i=start; i<nums.length;i++){
+      list.add(nums[i]);
+      helper(result, list, nums, i+1);
+      list.remove(list.size()-1);
     }
+  }
 }

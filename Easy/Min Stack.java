@@ -12,26 +12,26 @@ getMin() -- Retrieve the minimum element in the stack.
 
 
 class MinStack {
-    private Stack<Integer> stack = new Stack<Integer>(); 
-    private Stack<Integer> minStack = new Stack<Integer>(); 
-    
-    public void push(int x) {
-        if(minStack.empty() || x <= minStack.peek())
-            minStack.push(x);
-        stack.push(x);    
-    }
+  private Stack<Integer> stack = new Stack<Integer>(); 
+  private Stack<Integer> minStack = new Stack<Integer>(); 
+  
+  public void push(int x) {
+    if(minStack.empty() || x <= minStack.peek())
+      minStack.push(x);
+    stack.push(x);  
+  }
 
-    public void pop() {
-        if(!minStack.empty() && stack.peek().equals(minStack.peek()))
-            minStack.pop();
-        stack.pop();
-    }
+  public void pop() {
+    if(!minStack.empty() && stack.peek().equals(minStack.peek()))
+      minStack.pop();
+    stack.pop();
+  }
 
-    public int top() {
-        return stack.empty() ? 0 : stack.peek();
-    }
+  public int top() {
+    return stack.empty() ? 0 : stack.peek();
+  }
 
-    public int getMin() {
-        return minStack.empty() ? 0 : minStack.peek();
-    }
+  public int getMin() {
+    return minStack.empty() ? 0 : minStack.peek();
+  }
 }

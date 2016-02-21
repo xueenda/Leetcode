@@ -11,47 +11,47 @@ Output: 7 -> 0 -> 8
 /**
  * Definition for singly-linked list.
  * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode(int x) { val = x; }
+ *   int val;
+ *   ListNode next;
+ *   ListNode(int x) { val = x; }
  * }
  */
 public class Solution {
-    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        ListNode ln = l1;
-        ListNode tail = null;
-        int add = 0;
-        while(l1!=null){
-            if( l2!=null){
-                l1.val += l2.val + add;
-                l2 = l2.next;
-            }else{
-                l1.val += add;
-            }
-            add = l1.val/10;
-            l1.val %= 10;
-            if(l1.next == null)
-                tail = l1;
-            l1 = l1.next;
-        }
-        
-        if(l2!=null)
-            tail.next = l2;
-            
-        while(l2!=null){
-            l2.val += add;
-            add = l2.val/10;
-            l2.val %= 10;
-            if(l2.next == null)
-                tail = l2;
-            l2 = l2.next;
-        }
-        
-        if(add==1){
-            ListNode n = new ListNode(1);
-            tail.next = n;
-        }
-            
-        return ln;
+  public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+    ListNode ln = l1;
+    ListNode tail = null;
+    int add = 0;
+    while(l1!=null){
+      if( l2!=null){
+        l1.val += l2.val + add;
+        l2 = l2.next;
+      }else{
+        l1.val += add;
+      }
+      add = l1.val/10;
+      l1.val %= 10;
+      if(l1.next == null)
+        tail = l1;
+      l1 = l1.next;
     }
+    
+    if(l2!=null)
+      tail.next = l2;
+      
+    while(l2!=null){
+      l2.val += add;
+      add = l2.val/10;
+      l2.val %= 10;
+      if(l2.next == null)
+        tail = l2;
+      l2 = l2.next;
+    }
+    
+    if(add==1){
+      ListNode n = new ListNode(1);
+      tail.next = n;
+    }
+      
+    return ln;
+  }
 }

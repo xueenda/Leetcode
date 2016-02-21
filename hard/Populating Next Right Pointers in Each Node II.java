@@ -10,15 +10,15 @@ Note:
 You may only use constant extra space.
 For example,
 Given the following binary tree,
-     1
-     /  \
-    2  3
+   1
+   /  \
+  2  3
    / \  \
   4   5  7
 After calling your function, the tree should look like:
-     1 -> NULL
-     /  \
-    2 -> 3 -> NULL
+   1 -> NULL
+   /  \
+  2 -> 3 -> NULL
    / \  \
   4-> 5 -> 7 -> NULL
 */
@@ -34,41 +34,41 @@ After calling your function, the tree should look like:
  */
 public class Solution {
   public void connect(TreeLinkNode root) {
-    if (root == null) {
-      return;
-    }
+  if (root == null) {
+    return;
+  }
 
-    TreeLinkNode parent = root;
-    TreeLinkNode pre;
-    TreeLinkNode next;
+  TreeLinkNode parent = root;
+  TreeLinkNode pre;
+  TreeLinkNode next;
+  while (parent != null) {
+    pre = null;
+    next = null;
     while (parent != null) {
-      pre = null;
-      next = null;
-      while (parent != null) {
-        if (next == null){
-          next = (parent.left != null) ? parent.left: parent.right;
-        }
-
-        if (parent.left != null){
-          if (pre != null) {
-            pre.next = parent.left;
-            pre = pre.next;
-          } else {
-            pre = parent.left;
-          }
-        }
-
-        if (parent.right != null) {
-          if (pre != null) {
-            pre.next = parent.right;
-            pre = pre.next;
-          } else {
-            pre = parent.right;
-          }
-        }
-        parent = parent.next;
-      }
-      parent = next;
+    if (next == null){
+      next = (parent.left != null) ? parent.left: parent.right;
     }
+
+    if (parent.left != null){
+      if (pre != null) {
+      pre.next = parent.left;
+      pre = pre.next;
+      } else {
+      pre = parent.left;
+      }
+    }
+
+    if (parent.right != null) {
+      if (pre != null) {
+      pre.next = parent.right;
+      pre = pre.next;
+      } else {
+      pre = parent.right;
+      }
+    }
+    parent = parent.next;
+    }
+    parent = next;
+  }
   }
 }

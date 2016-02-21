@@ -12,40 +12,40 @@ Note: next() and hasNext() should run in average O(1) time and uses O(h) memory,
 /**
  * Definition for binary tree
  * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
+ *   int val;
+ *   TreeNode left;
+ *   TreeNode right;
+ *   TreeNode(int x) { val = x; }
  * }
  */
 
 public class BSTIterator {
 
-    Stack<TreeNode> stack;
+  Stack<TreeNode> stack;
  
   public BSTIterator(TreeNode root) {
-    stack = new Stack<TreeNode>();
-    while (root != null) {
-      stack.push(root);
-      root = root.left;
-    }
+  stack = new Stack<TreeNode>();
+  while (root != null) {
+    stack.push(root);
+    root = root.left;
+  }
   }
  
   public boolean hasNext() {
-    return !stack.isEmpty();
+  return !stack.isEmpty();
   }
  
   public int next() {
-    TreeNode node = stack.pop();
-    int result = node.val;
-    if (node.right != null) {
-      node = node.right;
-      while (node != null) {
-        stack.push(node);
-        node = node.left;
-      }
+  TreeNode node = stack.pop();
+  int result = node.val;
+  if (node.right != null) {
+    node = node.right;
+    while (node != null) {
+    stack.push(node);
+    node = node.left;
     }
-    return result;
+  }
+  return result;
   }
 }
 

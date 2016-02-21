@@ -18,26 +18,26 @@ If n = 4 and k = 2, a solution is:
 
 
 public class Solution {
-    public List<List<Integer>> combine(int n, int k) {
-        List result = new ArrayList();
-        if(n==0 || k ==0)
-            return result;
-        
-        ArrayList<Integer> list = new ArrayList<Integer>();
-        helper(result, list, n, k, 1);
-        return result;
+  public List<List<Integer>> combine(int n, int k) {
+    List result = new ArrayList();
+    if(n==0 || k ==0)
+      return result;
+    
+    ArrayList<Integer> list = new ArrayList<Integer>();
+    helper(result, list, n, k, 1);
+    return result;
+  }
+  
+  private void helper(List result, ArrayList<Integer> list, int n, int k, int start){
+    if(list.size() == k){
+      result.add(new ArrayList(list));
+      return;
     }
     
-    private void helper(List result, ArrayList<Integer> list, int n, int k, int start){
-        if(list.size() == k){
-            result.add(new ArrayList(list));
-            return;
-        }
-        
-        for(int i=start;i<=n;i++){
-            list.add(i);
-            helper(result, list, n, k, i+1);
-            list.remove(list.size()-1);
-        }
+    for(int i=start;i<=n;i++){
+      list.add(i);
+      helper(result, list, n, k, i+1);
+      list.remove(list.size()-1);
     }
+  }
 }

@@ -25,14 +25,14 @@ For now, the judge is able to judge based on one instance of gray code sequence.
 
 
 public class Solution {
-    public List<Integer> grayCode(int n) {
-        List<Integer> ret = new LinkedList<>();
-        ret.add(0);
-        for (int i = 0; i < n; i++) {
-            int size = ret.size();
-            for (int j = size - 1; j >= 0; j--)
-                ret.add(ret.get(j) + size);
-        }
-        return ret;
+  public List<Integer> grayCode(int n) {
+    List<Integer> ret = new LinkedList<>();
+    ret.add(0);
+    for (int i = 0; i < n; i++) {
+      int size = ret.size();
+      for (int j = size - 1; j >= 0; j--)
+        ret.add(ret.get(j) + size);
     }
+    return ret;
+  }
 }

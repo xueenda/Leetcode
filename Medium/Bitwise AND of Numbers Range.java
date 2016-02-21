@@ -10,13 +10,13 @@ For example, given the range [5, 7], you should return 4.
 
 
 public class Solution {
-    public int rangeBitwiseAnd(int m, int n) {
-        int i = 0;
-        while(m!=n){
-            m >>= 1;
-            n >>= 1;
-            i++;
-        }
-        return (m<<i);
+  public int rangeBitwiseAnd(int m, int n) {
+    int i = 0;
+    while(m!=n){
+      m >>= 1;
+      n >>= 1;
+      i++;
     }
+    return (m<<i);
+  }
 }

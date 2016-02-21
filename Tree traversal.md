@@ -9,12 +9,12 @@ preorder(node)
 iterativePreorder(node)
   parentStack = empty stack
   while (not parentStack.isEmpty() or node ≠ null)
-    if (node ≠ null) 
-      visit(node)
-      if (node.right ≠ null) parentStack.push(node.right) 
-      node = node.left   
-    else     
-      node = parentStack.pop()
+  if (node ≠ null) 
+    visit(node)
+    if (node.right ≠ null) parentStack.push(node.right) 
+    node = node.left   
+  else   
+    node = parentStack.pop()
 
 
 # In order (left, root, right)
@@ -28,13 +28,13 @@ inorder(node)
 iterativeInorder(node)
   parentStack = empty stack
   while (not parentStack.isEmpty() or node ≠ null)
-    if (node ≠ null)
-      parentStack.push(node)
-      node = node.left
-    else
-      node = parentStack.pop()
-      visit(node)
-      node = node.right
+  if (node ≠ null)
+    parentStack.push(node)
+    node = node.left
+  else
+    node = parentStack.pop()
+    visit(node)
+    node = node.right
 
 # Post order (left, right, root)
 //  recursive
@@ -49,15 +49,15 @@ iterativePostorder(node)
   parentStack = empty stack  
   lastnodevisited = null 
   while (not parentStack.isEmpty() or node ≠ null)
-    if (node ≠ null)
-      parentStack.push(node)
-      node = node.left
+  if (node ≠ null)
+    parentStack.push(node)
+    node = node.left
+  else
+    peeknode = parentStack.peek()
+    if (peeknode.right ≠ null and lastnodevisited ≠ peeknode.right) 
+    /* if right child exists AND traversing node from left child, move right */
+    node = peeknode.right
     else
-      peeknode = parentStack.peek()
-      if (peeknode.right ≠ null and lastnodevisited ≠ peeknode.right) 
-        /* if right child exists AND traversing node from left child, move right */
-        node = peeknode.right
-      else
-        visit(peeknode)
-        lastnodevisited = parentStack.pop() 
-        node = null
+    visit(peeknode)
+    lastnodevisited = parentStack.pop() 
+    node = null

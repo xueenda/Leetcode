@@ -24,42 +24,42 @@ Show Similar Problems
 
 
 public class Solution {
-    public int ladderLength(String start, String end, Set<String> dict) {
-        if (dict == null || dict.size() == 0) {
-            return 0;
-        }
-
-        Queue<String> queue = new LinkedList<String>();
-        queue.add(start);
-        dict.remove(start);
-        int length = 1;
-
-        while(!queue.isEmpty()) {
-            int count = queue.size();
-            for (int i = 0; i<count; i++){
-                String current = queue.poll();
-                char[] arr = current.toCharArray();
-                for (int j=0; j < arr.length; j++) {
-                    char temp = arr[j];
-                    for (char c = 'a'; c <= 'z'; c++) {
-                        if (c == arr[j]) {
-                            continue;
-                        }
-                        arr[j] = c;
-                        String tmp = new String(arr);
-                        if (tmp.equals(end)) {
-                            return length + 1;
-                        }
-                        if (dict.contains(tmp)){
-                            queue.add(tmp);
-                            dict.remove(tmp);
-                        }
-                    }
-                    arr[j] = temp;
-                }
-            }
-            length++;
-        }
-        return 0;
+  public int ladderLength(String start, String end, Set<String> dict) {
+    if (dict == null || dict.size() == 0) {
+      return 0;
     }
+
+    Queue<String> queue = new LinkedList<String>();
+    queue.add(start);
+    dict.remove(start);
+    int length = 1;
+
+    while(!queue.isEmpty()) {
+      int count = queue.size();
+      for (int i = 0; i<count; i++){
+        String current = queue.poll();
+        char[] arr = current.toCharArray();
+        for (int j=0; j < arr.length; j++) {
+          char temp = arr[j];
+          for (char c = 'a'; c <= 'z'; c++) {
+            if (c == arr[j]) {
+              continue;
+            }
+            arr[j] = c;
+            String tmp = new String(arr);
+            if (tmp.equals(end)) {
+              return length + 1;
+            }
+            if (dict.contains(tmp)){
+              queue.add(tmp);
+              dict.remove(tmp);
+            }
+          }
+          arr[j] = temp;
+        }
+      }
+      length++;
+    }
+    return 0;
+  }
 }

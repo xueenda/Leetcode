@@ -15,21 +15,21 @@ Return:
 
 
 public class Solution {
-    public List<String> findRepeatedDnaSequences(String s) {
-        HashSet<String> set = new HashSet<String>();
-        HashSet<String> dna = new HashSet<String>(); // make sure no duplicate in dna set
-        for (int i = 9; i < s.length(); i++) {
-            String subString = s.substring(i - 9, i + 1);
-            if (set.contains(subString)) {
-                dna.add(subString);
-            } else {
-                set.add(subString);
-            }
-        }
-        List<String> result = new ArrayList<String>();
-        for (String d: dna) {
-            result.add(d);
-        }
-        return result;
+  public List<String> findRepeatedDnaSequences(String s) {
+    HashSet<String> set = new HashSet<String>();
+    HashSet<String> dna = new HashSet<String>(); // make sure no duplicate in dna set
+    for (int i = 9; i < s.length(); i++) {
+      String subString = s.substring(i - 9, i + 1);
+      if (set.contains(subString)) {
+        dna.add(subString);
+      } else {
+        set.add(subString);
+      }
     }
+    List<String> result = new ArrayList<String>();
+    for (String d: dna) {
+      result.add(d);
+    }
+    return result;
+  }
 }

@@ -25,25 +25,25 @@ return [3,2,1].
  */
 public class Solution {
   public List<Integer> postorderTraversal(TreeNode root) {
-    List<Integer> list = new ArrayList<Integer>();
-    Stack<TreeNode> stack = new Stack<TreeNode>();
-    TreeNode previsited = null;
-    while(root!=null || !stack.empty()){
-      if(root!=null){
-        stack.push(root);
-        root = root.left;
-      }else{
-        root = stack.peek();
-        if(root.right!=null && previsited != root.right){
-          root = root.right;
-        }else{
-          list.add(root.val);
-          previsited = stack.pop();;
-          root = null;
-        }
-      }
+  List<Integer> list = new ArrayList<Integer>();
+  Stack<TreeNode> stack = new Stack<TreeNode>();
+  TreeNode previsited = null;
+  while(root!=null || !stack.empty()){
+    if(root!=null){
+    stack.push(root);
+    root = root.left;
+    }else{
+    root = stack.peek();
+    if(root.right!=null && previsited != root.right){
+      root = root.right;
+    }else{
+      list.add(root.val);
+      previsited = stack.pop();;
+      root = null;
     }
-    return list;
+    }
+  }
+  return list;
   }
 }
 
@@ -60,28 +60,28 @@ public class Solution {
  */
 public class Solution {
   public List<Integer> postorderTraversal(TreeNode root) {
-    List<Integer> list = new ArrayList<Integer>();
-    if(root==null)
-      return list;
-    Stack<TreeNode> stack = new Stack<TreeNode>();
-    stack.push(root);
-    TreeNode previsited = null;
-    while(!stack.empty()){
-      while(root.left!=null){
-        stack.push(root.left);
-        root = root.left;
-      }
-      
-      root = stack.peek();
-      if(root.right!=null && previsited!=root.right){
-        root = root.right;
-        stack.push(root);
-      }else{
-        list.add(root.val);
-        previsited = stack.pop();
-        root.left = null;
-      }
-    }
+  List<Integer> list = new ArrayList<Integer>();
+  if(root==null)
     return list;
+  Stack<TreeNode> stack = new Stack<TreeNode>();
+  stack.push(root);
+  TreeNode previsited = null;
+  while(!stack.empty()){
+    while(root.left!=null){
+    stack.push(root.left);
+    root = root.left;
+    }
+    
+    root = stack.peek();
+    if(root.right!=null && previsited!=root.right){
+    root = root.right;
+    stack.push(root);
+    }else{
+    list.add(root.val);
+    previsited = stack.pop();
+    root.left = null;
+    }
+  }
+  return list;
   }
 }

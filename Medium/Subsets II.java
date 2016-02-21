@@ -20,32 +20,32 @@ If nums = [1,2,2], a solution is:
 /*
 注意： 保证没有重复的list
 if(!result.contains(list)){
-    result.add(new ArrayList(list));
+  result.add(new ArrayList(list));
 }
 */
 
 
 public class Solution {
-    public List<List<Integer>> subsetsWithDup(int[] nums) {
-        List result = new ArrayList();
-        if(nums == null || nums.length==0)
-            return result;
-        
-        Arrays.sort(nums);
-        ArrayList<Integer> list = new ArrayList<Integer>();
-        helper(result, list, nums, 0);
-        return result;
+  public List<List<Integer>> subsetsWithDup(int[] nums) {
+    List result = new ArrayList();
+    if(nums == null || nums.length==0)
+      return result;
+    
+    Arrays.sort(nums);
+    ArrayList<Integer> list = new ArrayList<Integer>();
+    helper(result, list, nums, 0);
+    return result;
+  }
+  
+  private void helper(List result, ArrayList<Integer> list, int[] nums, int start){
+    if(!result.contains(list)){
+      result.add(new ArrayList(list));
     }
     
-    private void helper(List result, ArrayList<Integer> list, int[] nums, int start){
-        if(!result.contains(list)){
-            result.add(new ArrayList(list));
-        }
-        
-        for(int i= start;i<nums.length;i++){
-            list.add(nums[i]);
-            helper(result, list, nums, i+1);
-            list.remove(list.size()-1);
-        }
+    for(int i= start;i<nums.length;i++){
+      list.add(nums[i]);
+      helper(result, list, nums, i+1);
+      list.remove(list.size()-1);
     }
+  }
 }

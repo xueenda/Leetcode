@@ -15,35 +15,35 @@ Here is an example of version numbers ordering:
 
 
 public class Solution {
-    public int compareVersion(String version1, String version2) {
-        String[] v1 = version1.split("\\.");
-        String[] v2 = version2.split("\\.");
-        int i=0;
-        for(i=0; i< Math.min(v1.length,v2.length);i++){
-            int result = compare(v1[i], v2[i]);
-            if(result != 0)
-                return result;
-        }
-        
-        
-        if(v1.length > v2.length){
-            return compare(v1[i],"0");
-        }
-            
-        else if(v1.length < v2.length)
-            return compare("0",v2[i]);
-        else
-            return 0;
+  public int compareVersion(String version1, String version2) {
+    String[] v1 = version1.split("\\.");
+    String[] v2 = version2.split("\\.");
+    int i=0;
+    for(i=0; i< Math.min(v1.length,v2.length);i++){
+      int result = compare(v1[i], v2[i]);
+      if(result != 0)
+        return result;
     }
-    private int compare(String s1,String s2){
-        int n1 = Integer.parseInt(s1);
-        int n2 = Integer.parseInt(s2);
-        
-        if(n1 > n2)
-            return 1;
-        else if(n1 < n2)
-            return -1;
-        else
-            return 0;
+    
+    
+    if(v1.length > v2.length){
+      return compare(v1[i],"0");
     }
+      
+    else if(v1.length < v2.length)
+      return compare("0",v2[i]);
+    else
+      return 0;
+  }
+  private int compare(String s1,String s2){
+    int n1 = Integer.parseInt(s1);
+    int n2 = Integer.parseInt(s2);
+    
+    if(n1 > n2)
+      return 1;
+    else if(n1 < n2)
+      return -1;
+    else
+      return 0;
+  }
 }

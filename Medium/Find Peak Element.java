@@ -14,23 +14,23 @@ For example, in array [1, 2, 3, 1], 3 is a peak element and your function should
 
 
 public class Solution {
-    public int findPeakElement(int[] A) {
-        int start = 0;
-        int end = A.length -1;
-        while(start + 1 <  end) {
-            int mid = (start + end) / 2;
-            if(A[mid] < A[mid - 1]) {
-                end = mid;
-            } else if(A[mid] < A[mid + 1]) {
-                start = mid;
-            } else {
-                end = mid;
-            }
-        }
-        if(A[start] < A[end]) {
-            return end;
-        } else { 
-            return start;
-        }
+  public int findPeakElement(int[] A) {
+    int start = 0;
+    int end = A.length -1;
+    while(start + 1 <  end) {
+      int mid = (start + end) / 2;
+      if(A[mid] < A[mid - 1]) {
+        end = mid;
+      } else if(A[mid] < A[mid + 1]) {
+        start = mid;
+      } else {
+        end = mid;
+      }
     }
+    if(A[start] < A[end]) {
+      return end;
+    } else { 
+      return start;
+    }
+  }
 }
