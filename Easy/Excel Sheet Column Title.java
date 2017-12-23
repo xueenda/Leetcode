@@ -17,7 +17,6 @@ For example:
  
 public class Solution {
     public String convertToTitle(int n) {
-        int size = 0;
         StringBuilder s = new StringBuilder();
         while(n>0){
             n--;
