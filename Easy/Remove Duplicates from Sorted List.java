@@ -9,7 +9,7 @@ Given 1->1->2->3->3, return 1->2->3.
 */
 
 /*
-  head 不会变 不用声明dummpy node
+  head 不变
 */
 
 
